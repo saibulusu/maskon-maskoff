@@ -1,10 +1,12 @@
 import os
 from flask import Flask, request, render_template
 
-from azure.cognitiveservices.vision.computervision import ComputerVisionClient
 from msrest.authentication import CognitiveServicesCredentials
+from azure.cognitiveservices.vision.computervision import ComputerVisionClient
+from azure.cognitiveservices.vision.face import FaceClient
+from azure.cognitiveservices.vision.face.models import TrainingStatusType, Person, SnapshotObjectType, OperationStatusType
 
-# go get values
+# Get environmental variables
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -23,13 +25,6 @@ def index():
     elif request.method == 'POST':
         # User has sent us data
         image = request.files['image']
-        client = ComputerVisionClient(
-            COGSVCS_CLIENTURL,
-            CognitiveServicesCredentials(COGSVCS_KEY)
-        )
-        result = client.describe_image_in_stream(image)
-        message = 'No dog found. How sad. :-('
-        if 'dog' in result.tags:
-            message = 'Dog found :D'
-        return render_template('result.html', message=message)
-        
+        face_client = FaceClient(COGSVCS_CLIENTURL, CognitiveServicesCredentials(COGSVCS_KEY))
+        detected_faces = face_client.face.detect_with_stream(image)
+        return render_template('result.html', size=len(detected_faces))
