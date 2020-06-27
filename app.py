@@ -26,5 +26,13 @@ def index():
         # User has sent us data
         image = request.files['image']
         face_client = FaceClient(COGSVCS_CLIENTURL, CognitiveServicesCredentials(COGSVCS_KEY))
-        detected_faces = face_client.face.detect_with_stream(image)
-        return render_template('result.html', size=len(detected_faces))
+        detected_faces = face_client.face.detect_with_stream(image, return_face_attributes=['accessories'])
+        
+        mask_count = 0
+        for face in detected_faces:
+            # if the face has a mask
+            types = set([acc.type for acc in face.face_attributes.accessories])
+            if 'mask' in types:
+                mask_count += 1
+        
+        return render_template('result.html', face_count=len(detected_faces), mask_count=mask_count)
