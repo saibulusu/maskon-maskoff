@@ -4,11 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href="css/global.css">
 </head>
 <body>
-    <h3>How many faces appear in a photo?</h3>
+    <h2>Mask On, Mask Off</h2>
     <form method="POST" enctype="multipart/form-data">
         <input type="file" name="image" id="image">
+         <select id="cities" name="cities">
+            <option value="hong-kong">Hong Kong</option>
+            <option value="london">London</option>
+            <option value="madison">Madison</option>
+            <option value="new-delhi">New Delhi</option>
+            <option value="paris">Paris</option>
+            <option value="seattle">Seatle</option>
+        </select> 
         <button type="submit">Submit</button>
     </form>
 </body>

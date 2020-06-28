@@ -1,0 +1,3 @@
+[submodule "FaceMaskDetection"]
+	path = FaceMaskDetection
+	url = https://github.com/AIZOOTech/FaceMaskDetection.git
