@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mask On, Mask Off</title>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesheet.css') }}"></head>
 <body>
@@ -11,16 +11,19 @@
         {% include 'header.html' %}
     </header>
     <main>
-        <h3>Results for {{ city }}</h3>
-        <div class = 'report-count'>
-            <p class = 'report-count-value'>{{ face_count }}</p>
-            <p>faces found</p>
+        <div class = 'report-container'>
+            <div class = 'report-count'>
+                <p class = 'report-count-value'>{{ face_count }}</p>
+                <p>faces found</p>
+            </div>
+            <div class = 'report-count'>
+                <p class = 'report-count-value'>{{ mask_count }}</p>
+                <p>masks found</p>
+            </div>
         </div>
-        <div class = 'report-count'>
-            <p class = 'report-count-value'>{{ mask_count }}</p>
-            <p>masks found</p>
-        </div>
+        <a href="{{ url_for('index') }}">Analyze another image</a>
+        <h3>Local health information for {{ city }}</h3>
+        <iframe id = 'powerbi-embed' width="640" height="500" src="https://msit.powerbi.com/view?r=eyJrIjoiMzhjNTlkNTYtZmYwOS00ZWRjLWEwYmEtMWYwY2Y4NDBhNjU4IiwidCI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsImMiOjV9" frameborder="0" allowFullScreen="true"></iframe>
     </main>
-    <iframe width="800" height="600" src="https://msit.powerbi.com/view?r=eyJrIjoiMzhjNTlkNTYtZmYwOS00ZWRjLWEwYmEtMWYwY2Y4NDBhNjU4IiwidCI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsImMiOjV9" frameborder="0" allowFullScreen="true"></iframe>
 </body>
 </html>
