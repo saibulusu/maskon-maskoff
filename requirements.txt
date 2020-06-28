@@ -2,6 +2,6 @@ flask
 python-dotenv
 azure-cognitiveservices-vision-computervision
 azure-cognitiveservices-vision-face==0.4.1
-tensorflow==1.13.0
+tensorflow==1.13.2
 Pillow
 opencv-python
