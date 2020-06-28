@@ -1,0 +1,59 @@
+:root {
+  --standard-radius: 8px;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #2A4849;
+  color: white;
+}
+
+header {
+  text-align: center;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+header > h1,
+header > p {
+  margin: 0;
+  font-weight: bold;
+}
+
+main {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+form {
+  background-color: #426B69;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 16px;
+  border-radius: var(--standard-radius);
+}
+
+.report-count {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 16px;
+  width: 8em;
+  background-color: #84A59D;
+  padding: 8px;
+  border-radius: var(--standard-radius);
+  color: white;
+}
+
+.report-count > p {
+  margin: 0;
+}
+
+.report-count-value {
+  font-size: 3em;
+  font-weight: bold;
+}

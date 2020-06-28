@@ -1,25 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" type="text/css" href="css/global.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesheet.css') }}">
 </head>
+
 <body>
-    <h2>Mask On, Mask Off</h2>
-    <form method="POST" enctype="multipart/form-data">
-        <input type="file" name="image" id="image">
-         <select id="cities" name="cities">
-            <option value="hong-kong">Hong Kong</option>
-            <option value="london">London</option>
-            <option value="madison">Madison</option>
-            <option value="new-delhi">New Delhi</option>
-            <option value="paris">Paris</option>
-            <option value="seattle">Seatle</option>
-        </select> 
-        <button type="submit">Submit</button>
-    </form>
+    <header>
+        {% include 'header.html' %}
+    </header>
+    <main>
+        <p>COVID-19 spreads mainly from person to person through respiratory droplets produced when an infected person coughs, sneezes, or talks. Wearing a mask helps to slow the spread of COVID-19 by reducing the risk of asymptomatic transmission.</p>
+        <form method="POST" enctype="multipart/form-data">
+            <label for="image">Select an image to analyze</label>
+            <input type="file" name="image" id="image">
+            <label for="city">Where was this photo taken?</label>
+            <select id="city" name="cities">
+                <option value="hong-kong">Hong Kong</option>
+                <option value="london">London</option>
+                <option value="madison">Madison</option>
+                <option value="new-delhi">New Delhi</option>
+                <option value="paris">Paris</option>
+                <option value="seattle">Seatle</option>
+            </select>
+            <button type="submit">Analyze</button>
+        </form>
+    </main>
 </body>
+
 </html>
