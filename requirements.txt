@@ -9,5 +9,5 @@ Pillow
 --pre azure-cosmos
 pydocumentdb
 python-dotenv
-tensorflow==1.13.2
+tensorflow==1.15.2
 uuid
