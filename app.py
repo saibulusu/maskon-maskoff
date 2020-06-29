@@ -14,7 +14,7 @@ from azure.cognitiveservices.vision.face import FaceClient
 from azure.cognitiveservices.vision.face.models import TrainingStatusType, Person, SnapshotObjectType, OperationStatusType
 
 # Credit: https://github.com/AIZOOTech/FaceMaskDetection
-from FaceMaskDetection.tensorflow_infer import inference
+from tensorflow_infer import inference
 
 from PIL import Image
 
