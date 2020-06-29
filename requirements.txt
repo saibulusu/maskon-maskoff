@@ -1,13 +1,13 @@
-flask
-python-dotenv
 azure-cognitiveservices-vision-computervision
 azure-cognitiveservices-vision-face==0.4.1
-tensorflow==1.13.2
-Pillow
-opencv-python
-pydocumentdb
 azure-cosmos
 azure-mgmt-cosmosdb
---pre azure-cosmos
 easydict
+flask
+opencv-python
+Pillow
+--pre azure-cosmos
+pydocumentdb
+python-dotenv
+tensorflow==1.13.2
 uuid
