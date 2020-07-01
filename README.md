@@ -11,7 +11,3 @@ python3 -m venv venv
 . ./venv/bin/activate
 pip3 install -r requirements.txt
 ```
-
-## Usage
-
-Mask On, Mask Off relies on Microsoft Azure. TODO: add instructions for generating and storing keys.
